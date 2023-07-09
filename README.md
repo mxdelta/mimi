@@ -27,7 +27,9 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 - `lsadump::lsa` - вытягивает хэши паролей из дискового хранилища LSA.
 - `token::elevate` - поднимает привилегии на максимальный уровень.
 - `token::whoami` - выводит информацию о текущем пользователе.
+-  lsadump::cache - mscash2 последних 10 пользователей и систем и секьюрити
 
+Подробнее: https://www.securitylab.ru/analytics/517178.php
 
 Для получения данных из ntds.dit, аналогично команде lsadump::sam в инструменте Mimikatz, можно использовать следующие команды:
 
